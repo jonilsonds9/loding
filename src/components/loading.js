@@ -1,21 +1,13 @@
-import React from "react";
-
-// import Spinner from "react-spinkit";
+import React, { memo } from "react";
 import Spinner from "react-spinner-material";
 
-const Loading = ({ loading }) => {
-  return loading ? (
+const Loading = ({ loading }) =>
+  loading && (
     <div className="overlay-content">
       <div className="wrapper">
-        <Spinner
-          size={120}
-          spinnerColor={"#007bff"}
-          spinnerWidth={5}
-          visible={true}
-        />
+        <Spinner radius={120} color={"#007bff"} visible={true} />
       </div>
     </div>
-  ) : null;
-};
+  );
 
-export default Loading;
+export default memo(Loading);
